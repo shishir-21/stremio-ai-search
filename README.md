@@ -454,6 +454,17 @@ Here are some examples showing how versatile this addon is.
 
 ## Self Hosting
 
+### Docker (Recommended)
+
+#### Requirements
+- Docker
+- Docker Compose
+
+#### Run with Docker Compose
+
+```bash
+docker compose up --build
+
 ### Environment Variables
 
 When self-hosting the addon, you can configure the following environment variables in a `.env` file:

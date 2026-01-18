@@ -1,10 +1,17 @@
-FROM node:23
+FROM node:20-alpine
+
 WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 7000
+
 ENV NODE_ENV=production
 ENV ENABLE_LOGGING=false
+
+COPY package*.json ./
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 7000
+
 RUN mkdir -p logs
-CMD ["node", "server.js"] 
+
+CMD ["node", "server.js"]
